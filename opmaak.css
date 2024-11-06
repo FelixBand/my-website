@@ -1,0 +1,44 @@
+.container {
+    max-width: 60%; /* or any other value that suits your design */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Adds some padding inside the container */
+    width: 100%; /* Ensures it takes up all available space up to the max-width */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+    color: white; /* Sets the text color to white */  
+}
+
+.topnav {
+    background-color: #4e4e4e; /* Dark background for the navbar */
+    overflow: hidden; /* Clears floats */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Aligns items vertically in the center */
+    height: 50px; /* Set the height of the navbar */
+}
+
+.topnav a {
+    color: rgb(255, 255, 255); /* White text color */
+    padding: 14px 16px; /* Padding around the text */
+    text-decoration: none; /* Removes underline from links */
+    display: inline-block; /* Displays the links inline */
+}
+
+.topnav a:hover {
+    background-color: #ffd119; /* Lighter grey background when hovered */
+}
+
+.topnav a.active {
+    background-color: #ff0000; /* Red background for the active link */
+}
+
+.topnav-centered {
+    display: flex; /* Uses flexbox to align the links */
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Centers the links vertically */
+}
+
+.server-link {
+    color: red;  /* Sets the color of the link text to blue */
+    text-decoration: none; /* Optional: removes the underline typically associated with links */
+}
