@@ -1,3 +1,7 @@
+body {
+    font-size:150%;
+}
+
 .container {
     max-width: 60%; /* or any other value that suits your design */
     margin-left: auto;
