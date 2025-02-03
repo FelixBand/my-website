@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setCookie("username", username, 365);
 
         // Send message to Flask backend
-        fetch("https://thuis.felixband.nl:5000/send_message", { // Replace with your actual server IP
+        fetch("http://thuis.felixband.nl:5000/send_message", { // Replace with your actual server IP
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, message })
