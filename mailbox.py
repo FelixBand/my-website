@@ -1,14 +1,13 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
-import os
+from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
 
 MESSAGE_FILE = "messages.txt"
 
 @app.route("/send_message", methods=["POST"])
 def send_message():
+    CORS(app, origins=["https://thuis.felixband.nl"])  # Restrict CORS
     data = request.get_json()
     username = data.get("username", "Anonymous").strip()
     message = data.get("message", "").strip()
@@ -26,4 +25,4 @@ def send_message():
     return "Message sent successfully!"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="127.0.0.1", port=5000)  # Internal only, managed by Gunicorn

@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Store name in a cookie (expires in 1 year)
         setCookie("username", username, 365);
 
-        // Send message to Flask backend
-        fetch("https://thuis.felixband.nl:5000/send_message", { // Replace with your actual server IP
+        // Send message to Flask backend (relative URL avoids CORS issues)
+        fetch("/send_message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, message })
@@ -52,10 +52,10 @@ function setCookie(name, value, days) {
 }
 
 function copyToClipboard() {
-    var text = document.getElementById('serverAddress').innerText; // Get the text of the server address
+    let text = document.getElementById('serverAddress').innerText;
     navigator.clipboard.writeText(text).then(() => {
-        alert('Address copied to clipboard!'); // Notification after successful copy
+        alert('Address copied to clipboard!');
     }).catch(err => {
-        console.error('Failed to copy text: ', err); // Error handling
+        console.error('Failed to copy text: ', err);
     });
 }
