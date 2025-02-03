@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Store name in a cookie (expires in 1 year)
         setCookie("username", username, 365);
 
-        // Send message to backend
-        fetch("mailbox.php", {
+        // Send message to Flask backend
+        fetch("https://thuis.felixband.nl:5000/send_message", { // Replace with your actual server IP
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `username=${encodeURIComponent(username)}&message=${encodeURIComponent(message)}`
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, message })
         })
         .then(response => response.text())
         .then(data => {
