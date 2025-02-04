@@ -13,7 +13,9 @@ def send_message():
     data = request.get_json()
     username = data.get("username", "Anonymous").strip()
     message = data.get("message", "").strip()
-    ip_address = request.remote_addr  # Get sender's IP
+
+    # Get real IP address
+    ip_address = request.headers.get("X-Forwarded-For", request.remote_addr).split(",")[0].strip()
 
     if not message:
         return "Error: Message cannot be empty!", 400
