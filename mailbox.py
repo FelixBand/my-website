@@ -3,11 +3,13 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
+# 🛠 FIX: Move CORS setup here
+CORS(app, origins=["https://thuis.felixband.nl"])  
+
 MESSAGE_FILE = "messages.txt"
 
 @app.route("/send_message", methods=["POST"])
 def send_message():
-    CORS(app, origins=["https://thuis.felixband.nl"])  # Restrict CORS
     data = request.get_json()
     username = data.get("username", "Anonymous").strip()
     message = data.get("message", "").strip()
