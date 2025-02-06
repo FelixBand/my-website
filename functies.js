@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let nameInput = document.getElementById("username");
+    let messageInput = document.getElementById("message");
 
     // Load name from cookies if available
     let savedName = getCookie("username");
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Stop the form from reloading the page
 
         let username = nameInput.value.trim();
-        let message = document.getElementById("message").value.trim();
+        let message = messageInput.value.trim();
 
         if (username === "" || message === "") {
             alert("Please fill in all fields.");
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Store name in a cookie (expires in 1 year)
         setCookie("username", username, 365);
 
-        // Send message to Flask backend (relative URL avoids CORS issues)
+        // Send message to Flask backend
         fetch("/send_message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -30,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById("statusMessage").innerText = data;
+            
+            // Clear message box after successful send
+            messageInput.value = "";
         })
         .catch(error => {
             console.error("Error:", error);
