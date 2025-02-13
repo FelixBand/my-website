@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from datetime import datetime
 
 app = Flask(__name__)
 
-# 🛠 FIX: Move CORS setup here
-CORS(app, origins=["https://thuis.felixband.nl"])  
+# Move CORS setup here
+CORS(app, origins=["https://thuis.felixband.nl"])
 
 MESSAGE_FILE = "messages.txt"
 
@@ -20,7 +21,10 @@ def send_message():
     if not message:
         return "Error: Message cannot be empty!", 400
 
-    log_entry = f"IP: {ip_address} | Name: {username}\nMessage:\n{message}\n\n"
+    # Get current date and time (dd/mm/yyyy HH:MM:SS)
+    timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+    log_entry = f"Time: {timestamp}\nIP: {ip_address} | Name: {username}\nMessage:\n{message}\n\n"
 
     # Save message to file
     with open(MESSAGE_FILE, "a", encoding="utf-8") as file:
