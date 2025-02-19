@@ -15,6 +15,8 @@ def send_message():
     username = data.get("username", "Anonymous").strip()
     message = data.get("message", "").strip()
 
+    ip_address = request.headers.get("X-Forwarded-For", request.remote_addr).split(",")[0].strip()
+
     # Log received data for debugging
     print(f"Received data: {data}")
     if not message:
@@ -23,8 +25,8 @@ def send_message():
     # Get current date and time (dd/mm/yyyy HH:MM:SS)
     timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-    log_entry = f"Time: {timestamp}\nIP: {request.remote_addr} | Name: {username}\nMessage:\n{message}\n\n"
-
+    log_entry = f"Time: {timestamp}\nIP: {ip_address} | Name: {username}\nMessage:\n{message}\n\n"
+    
     # Log to a separate test file
     with open("test_log.txt", "a", encoding="utf-8") as test_file:
         test_file.write(log_entry)
