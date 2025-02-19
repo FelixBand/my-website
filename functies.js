@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (mailForm) {
         mailForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // 🛑 Stops page reload and URL modification
+            event.preventDefault(); // Stop page reload
 
             let username = document.getElementById("username").value.trim();
             let message = document.getElementById("message").value.trim();
