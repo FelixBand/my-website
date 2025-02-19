@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             content: `
                 <h1 align="center">Mailbox</h1>
                 <p>Send me a message! Check back on this page to see if I have replied.</p>
-                <form id="mailForm">
+                <form id="mailForm" onsubmit="return false;">
                     <label for="username">Your Name:</label><br>
                     <input type="text" id="username" name="username" required><br>
                     <label for="message">Your Message:</label><br>

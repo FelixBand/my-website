@@ -1,20 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let nameInput = document.getElementById("username");
-    let messageInput = document.getElementById("message");
-
-    // Load name from cookies if available
-    let savedName = getCookie("username");
-    if (savedName) {
-        nameInput.value = savedName;
-    }
-
     let mailForm = document.getElementById("mailForm");
-    if (mailForm) { // Only run if the form exists on the page
-        mailForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // 🛑 Stop the form from changing the URL
 
-            let username = nameInput.value.trim();
-            let message = messageInput.value.trim();
+    if (mailForm) {
+        mailForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // 🛑 Stops page reload and URL modification
+
+            let username = document.getElementById("username").value.trim();
+            let message = document.getElementById("message").value.trim();
 
             if (username === "" || message === "") {
                 alert("Please fill in all fields.");
@@ -34,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 document.getElementById("statusMessage").innerText = data;
                 
-                // 🛠 Fix: Clear the message box after a successful send
-                messageInput.value = "";
+                // ✅ Clear message box after successful send
+                document.getElementById("message").value = "";
             })
             .catch(error => {
                 console.error("Error:", error);
