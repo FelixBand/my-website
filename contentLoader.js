@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const page = getPage();
         if (pages[page]) {
             document.getElementById("page-title").innerText = pages[page].title;
-            document.getElementById("content").innerHTML = pages[page].content;
+            document.getElementById("content").innerHTML = pages[page].content;  // Injecting content here
         } else {
             document.getElementById("content").innerHTML = "<h1>404 - Page Not Found</h1>";
         }
-    }
+    }    
 
     loadPage(); // Load the selected page
 });
