@@ -8,38 +8,41 @@ document.addEventListener("DOMContentLoaded", function () {
         nameInput.value = savedName;
     }
 
-    document.getElementById("mailForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Stop the form from reloading the page
+    let mailForm = document.getElementById("mailForm");
+    if (mailForm) { // Only run if the form exists on the page
+        mailForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // 🛑 Stop the form from changing the URL
 
-        let username = nameInput.value.trim();
-        let message = messageInput.value.trim();
+            let username = nameInput.value.trim();
+            let message = messageInput.value.trim();
 
-        if (username === "" || message === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
+            if (username === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
 
-        // Store name in a cookie (expires in 1 year)
-        setCookie("username", username, 365);
+            // Store name in a cookie (expires in 1 year)
+            setCookie("username", username, 365);
 
-        // Send message to Flask backend
-        fetch("/send_message", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, message })
-        })
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("statusMessage").innerText = data;
-            
-            // Clear message box after successful send
-            messageInput.value = "";
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            document.getElementById("statusMessage").innerText = "Error sending message.";
+            // Send message to Flask backend
+            fetch("/send_message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, message })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("statusMessage").innerText = data;
+                
+                // 🛠 Fix: Clear the message box after a successful send
+                messageInput.value = "";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("statusMessage").innerText = "Error sending message.";
+            });
         });
-    });
+    }
 });
 
 // Function to get a cookie value
