@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Move CORS setup here
-CORS(app, origins=["https://thuis.felixband.nl"])
+CORS(app, origins=["*"])  # Temporarily allow all origins
 
 MESSAGE_FILE = "messages.txt"
 
