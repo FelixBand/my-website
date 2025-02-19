@@ -12,15 +12,29 @@ MESSAGE_FILE = "messages.txt"
 @app.route("/send_message", methods=["POST"])
 def send_message():
     data = request.get_json()
-    print(f"Received data: {data}")  # Log the received data
     username = data.get("username", "Anonymous").strip()
     message = data.get("message", "").strip()
+
+    # Log received data for debugging
+    print(f"Received data: {data}")
     if not message:
         return "Error: Message cannot be empty!", 400
-    # Additional log for debugging
-    print(f"Processing message from {username}: {message}")
-    # Your message saving logic here...
+
+    # Get current date and time (dd/mm/yyyy HH:MM:SS)
+    timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+    log_entry = f"Time: {timestamp}\nIP: {request.remote_addr} | Name: {username}\nMessage:\n{message}\n\n"
+
+    # Log to a separate test file
+    with open("test_log.txt", "a", encoding="utf-8") as test_file:
+        test_file.write(log_entry)
+    
+    # Also save to your actual messages file
+    with open(MESSAGE_FILE, "a", encoding="utf-8") as file:
+        file.write(log_entry)
+
     return "Message sent successfully!"
+
 
 
 if __name__ == "__main__":
