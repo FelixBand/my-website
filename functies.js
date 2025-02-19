@@ -2,8 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let mailForm = document.getElementById("mailForm");
 
     if (mailForm) {
+        // Debugging message to check if form exists
+        console.log("Mail form found!");
+
         mailForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Stop page reload
+
+            // Debugging message to check if form is submitting
+            console.log("Form submitted!");
 
             let username = document.getElementById("username").value.trim();
             let message = document.getElementById("message").value.trim();
@@ -24,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(response => response.text())
             .then(data => {
+                console.log("Response from backend: ", data); // Debugging response
                 document.getElementById("statusMessage").innerText = data;
                 
                 // ✅ Clear message box after successful send
