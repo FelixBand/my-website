@@ -67,7 +67,7 @@ body {
 }
 
 .messageBox {
-    background-color: rgba(0, 0, 0, 0.1); /* Light gray background */
+    background-color: rgba(0, 0, 0, 0.3); /* Light gray background */
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px; /* Rounded corners */
@@ -76,7 +76,7 @@ body {
 }
 
 .messageBox:hover {
-    background-color: rgba(0, 0, 0, 0.2); /* Slightly darker background on hover */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background on hover */
 }
 
 /* Style for the name and date */
