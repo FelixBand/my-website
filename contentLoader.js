@@ -124,20 +124,38 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
+    function updateActiveNav() {
+        const page = getPage(); // Get the current page
+        const navLinks = document.querySelectorAll(".topnav a");
+    
+        navLinks.forEach(link => {
+            // Remove 'active' class from all links
+            link.classList.remove("active");
+    
+            // Check if the href includes the correct page name
+            const linkPage = new URL(link.href).searchParams.get("page") || "index";
+            if (linkPage === page) {
+                link.classList.add("active");
+            }
+        });
+    }    
+
     // Function to load the content of the page
     function loadPage() {
         const page = getPage();
         if (pages[page]) {
             document.getElementById("page-title").innerText = pages[page].title;
-            document.getElementById("content").innerHTML = pages[page].content;  // Injecting content here
-
+            document.getElementById("content").innerHTML = pages[page].content;
+    
             if (page === "mailbox") {
-                loadMessages(); // Load the messages for mailbox page
+                loadMessages();
             }
+    
+            updateActiveNav(); // Add this line to update the navbar
         } else {
             document.getElementById("content").innerHTML = "<h1>404 - Page Not Found</h1>";
         }
-    }
+    }    
 
     loadPage(); // Load the selected page
 });
