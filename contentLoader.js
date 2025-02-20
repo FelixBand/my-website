@@ -9,11 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     the games I like, and other general stuff about me.
                 </h1>
                 <p>
-                    <strong>Minecraft</strong> <br>
-                    I have a Minecraft server with various different worlds and gamemodes. The address is:<br>
-                    <span id="serverAddress" style="color:red;">minecraft.felixband.nl</span>
-                    <button onclick="copyToClipboard()">Copy Address</button><br>
-                    You can play on either Java or Bedrock edition.
+                    <strong>Welcome!</strong> <br>
+                    Feel free to take a look around.
                 </p>
             `
         },
