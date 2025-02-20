@@ -111,3 +111,26 @@ body {
     font-size: 0.95em;
     color: #c4c4c4;
 }
+
+/* Styles for the social media tab */
+#socialTab {
+    position: fixed; /* Fixes the tab to the screen */
+    bottom: 20px; /* Position it 20px from the bottom */
+    right: 20px; /* Position it 20px from the right */
+    background-color: #fff; /* White background for the tab */
+    border-radius: 50%; /* Makes the icon circular */
+    padding: 10px; /* Adds space around the icon */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    z-index: 1000; /* Ensures the tab is on top of other content */
+}
+
+#socialTab img {
+    width: 40px; /* Sets the size of the Instagram icon */
+    height: 40px; /* Sets the size of the Instagram icon */
+    display: block; /* Ensures image is displayed as a block */
+}
+
+#socialTab:hover {
+    background-color: #f1f1f1; /* Changes background color on hover */
+}
