@@ -65,7 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     I've made a few games and personal projects in my free time. Those include a full remake of
                     <a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys" target="_blank">Five Nights at Freddy's</a>
                     in Scratch, which you can play <a href="https://thuis.felixband.nl/fnaf" target="_blank">here</a>.
-                </p>   
+                </p>
+                <p>
+                    Beside that, I've also made a very modular remake of 
+                    <a href="https://ninja-muffin24.itch.io/funkin" target="_blank">Friday Night Funkin'</a>
+                    in Scratch, which you can play <a href="https://thuis.felixband.nl/fnf" target="_blank">here</a>.
+                </p>
             `
         },
         mailbox: {
