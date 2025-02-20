@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p id="statusMessage"></p>
                 <hr>
                 <h2 align="center">Message Wall</h2>
-                <p class="date-info">Date is formatted as dd/mm/yyyy and time is GMT+1.</p>
+                <p class="date-info">(Date is formatted as dd/mm/yyyy and time is GMT+1)</p>
                 <div id="messagesWall"></div> <!-- Message wall will appear here -->
             `
         }
