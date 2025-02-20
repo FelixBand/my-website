@@ -4,7 +4,8 @@
 !opmaak.css
 !functies.js
 !contentLoader.js
-!img/**
+!img/
+!img/*
 
 !mailbox.py
 
