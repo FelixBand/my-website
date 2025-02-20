@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="opmaak.css">
     <script src="contentLoader.js"></script> <!-- Load this first to inject content -->
     <script src="functies.js"></script> <!-- Then load this to attach event listeners -->
-
 </head>
 <body>
     <!-- Top Navigation -->
@@ -24,7 +23,43 @@
 
     <!-- Content Area -->
     <div class="container">
-        <div id="content"></div>
+        <div id="content">
+            <!-- This will be dynamically loaded when the mailbox tab is clicked -->
+            <div id="messagesWall"></div> <!-- Where the messages will appear -->
+        </div>
     </div>
+
+    <script>
+        // Function to load messages from msgs.json
+        function loadMessages() {
+            fetch('msgs.json')
+                .then(response => response.json())
+                .then(data => {
+                    const messagesWall = document.getElementById('messagesWall');
+                    messagesWall.innerHTML = ''; // Clear any existing content
+
+                    // Iterate through the messages and replies
+                    data.forEach(msg => {
+                        const messageBox = document.createElement('div');
+                        messageBox.classList.add('messageBox');
+
+                        messageBox.innerHTML = `
+                            <div class="name">${msg.name}</div>
+                            <div class="message">${msg.message}</div>
+                            <div class="reply"><strong>Reply:</strong> ${msg.reply}</div>
+                        `;
+
+                        messagesWall.appendChild(messageBox);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching messages:", error);
+                    document.getElementById('messagesWall').innerHTML = "Error loading messages.";
+                });
+        }
+
+        // Load messages when the page is loaded
+        window.onload = loadMessages;
+    </script>
 </body>
 </html>
