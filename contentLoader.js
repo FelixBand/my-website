@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     messageBox.innerHTML = `
                         <div class="name">${msg.name}</div>
+                        <div class="date">${msg.date}</div>
                         <div class="message">${msg.message}</div>
                         <div class="reply"><strong>Reply:</strong> ${msg.reply}</div>
                     `;
