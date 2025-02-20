@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </form>
                 <p id="statusMessage"></p>
                 <hr>
-                <h2>Message Wall</h2>
+                <h2 align="center">Message Wall</h2>
                 <div id="messagesWall"></div> <!-- Message wall will appear here -->
             `
         }
