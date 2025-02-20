@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     You can play on either Java or Bedrock edition.
                     I try to keep it up to date at all times, meaning you should be able to join on the newest release of the game.
 
-                    In case you have a pirated copy of Minecraft, I have a cracked server to acommodate. That address is:
+                    In case you have a pirated copy of Minecraft, I have a cracked server to accommodate. That address is:
                     <br>
                         <span id="serverAddress" style="color:red;">pi.felixband.nl:25566</span>
                         <button onclick="copyToClipboard()">Copy Address</button>
@@ -81,24 +81,61 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button type="submit">Send Message</button>
                 </form>
                 <p id="statusMessage"></p>
+                <hr>
+                <h2>Message Wall</h2>
+                <div id="messagesWall"></div> <!-- Message wall will appear here -->
             `
         }
     };
 
+    // Function to get the current page from the URL
     function getPage() {
         const params = new URLSearchParams(window.location.search);
         return params.get("page") || "index"; // Default to Home
     }
 
+    // Function to load the messages for the mailbox page
+    function loadMessages() {
+        fetch('msgs.json')
+            .then(response => response.json())
+            .then(data => {
+                const messagesWall = document.getElementById('messagesWall');
+                messagesWall.innerHTML = ''; // Clear any existing content
+
+                // Iterate through the messages and replies
+                data.forEach(msg => {
+                    const messageBox = document.createElement('div');
+                    messageBox.classList.add('messageBox');
+
+                    messageBox.innerHTML = `
+                        <div class="name">${msg.name}</div>
+                        <div class="message">${msg.message}</div>
+                        <div class="reply"><strong>Reply:</strong> ${msg.reply}</div>
+                    `;
+
+                    messagesWall.appendChild(messageBox);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching messages:", error);
+                document.getElementById('messagesWall').innerHTML = "Error loading messages.";
+            });
+    }
+
+    // Function to load the content of the page
     function loadPage() {
         const page = getPage();
         if (pages[page]) {
             document.getElementById("page-title").innerText = pages[page].title;
             document.getElementById("content").innerHTML = pages[page].content;  // Injecting content here
+
+            if (page === "mailbox") {
+                loadMessages(); // Load the messages for mailbox page
+            }
         } else {
             document.getElementById("content").innerHTML = "<h1>404 - Page Not Found</h1>";
         }
-    }    
+    }
 
     loadPage(); // Load the selected page
 });
