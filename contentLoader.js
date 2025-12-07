@@ -70,6 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             `
         },
+        movies: {
+            title: "Movies",
+            content: `
+                <h1 align="center">
+                    Watch some cool movies I like.
+                </h1>
+                <p>
+                    <strong>Grab some popcorn!</strong> <br>
+                    Select a movie from the list below.
+                </p>
+            `
+        },
         mailbox: {
             title: "Mailbox",
             content: `

@@ -131,6 +131,31 @@ body {
     display: block; /* Ensures image is displayed as a block */
 }
 
+
 #socialTab:hover {
+    background-color: #f1f1f1; /* Changes background color on hover */
+}
+
+/* Styles for the social media tab */
+#socialTab2 {
+    position: fixed; /* Fixes the tab to the screen */
+    bottom: 20px; /* Position it 20px from the bottom */
+    right: 100px; /* Position it 120px from the right */
+    background-color: #fff; /* White background for the tab */
+    border-radius: 50%; /* Makes the icon circular */
+    padding: 10px; /* Adds space around the icon */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    z-index: 1000; /* Ensures the tab is on top of other content */
+}
+
+
+#socialTab2 img {
+    width: 40px; /* Sets the size of the Discord icon */
+    height: 40px; /* Sets the size of the Discord icon */
+    display: block; /* Ensures image is displayed as a block */
+}
+
+#socialTab2:hover {
     background-color: #f1f1f1; /* Changes background color on hover */
 }
