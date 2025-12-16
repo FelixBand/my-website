@@ -1,70 +1,147 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: url('nicebg.jpg') no-repeat center center fixed;
-    background-size: cover; /* Resizes image without stretching */
+    background: url('nicebg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
     font-size: 150%;
-    color: white; /* Keeps text readable */
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
-.container { 
-    max-width: 60%; /* or any other value that suits your design */
+/* Desktop-only background parallax */
+@media (min-width: 769px) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
+/* ===============================
+   LAYOUT CONTAINER
+================================ */
+
+.container {
+    width: 100%;
+    max-width: 60%;
     margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px; /* Adds some padding inside the container */
-    width: 100%; /* Ensures it takes up all available space up to the max-width */
-    box-sizing: border-box; /* Includes padding in the width calculation */
-    color: white; /* Sets the text color to white */  
-
-    background: rgba(0, 0, 0, 0.75); /* 50% opaque black background */
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    body {
+        font-size: 100%;
+    }
+}
+
+/* ===============================
+   TYPOGRAPHY
+================================ */
+
+h1 {
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ===============================
+   TOP NAVIGATION
+================================ */
 
 .topnav {
-    background-color: #4e4e4e; /* Dark background for the navbar */
-    overflow: hidden; /* Clears floats */
-    display: flex; /* Enables flexbox layout */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Aligns items vertically in the center */
-    height: 50px; /* Set the height of the navbar */
-}
-
-.topnav a {
-    color: rgb(255, 255, 255); /* White text color */
-    padding: 14px 16px; /* Padding around the text */
-    text-decoration: none; /* Removes underline from links */
-    display: inline-block; /* Displays the links inline */
-}
-
-.topnav a:hover {
-    background-color: #ffd119; /* Lighter grey background when hovered */
-}
-
-.topnav a.active {
-    background-color: #ff0000; /* Red background for the active link */
+    background-color: #4e4e4e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4px 0;
 }
 
 .topnav-centered {
-    display: flex; /* Uses flexbox to align the links */
-    justify-content: center; /* Centers the links horizontally */
-    align-items: center; /* Centers the links vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.topnav a:hover {
+    background-color: #ffd119;
+}
+
+.topnav a:active {
+    background-color: #ff9800;
+}
+
+.topnav a.active {
+    background-color: #ff0000;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+    .topnav-centered {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .topnav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+    }
+}
+
+/* ===============================
+   LINKS
+================================ */
 
 .server-link {
-    color: red;  /* Sets the color of the link text to blue */
-    text-decoration: none; /* Optional: removes the underline typically associated with links */
+    color: red;
+    text-decoration: none;
 }
 
-/* Styles for the message box wall */
+/* ===============================
+   MAILBOX / MESSAGE WALL
+================================ */
+
 .date-info {
     font-size: 0.9em;
-    color: #888; /* Lighter gray color */
+    color: #888;
     text-align: center;
-    margin-bottom: 20px; /* Adds space before the message wall */
+    margin-bottom: 20px;
 }
 
 #messagesWall {
@@ -74,19 +151,18 @@ body {
 }
 
 .messageBox {
-    background-color: rgba(0, 0, 0, 0.3); /* Light gray background */
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 15px;
     margin-bottom: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .messageBox:hover {
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background on hover */
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Style for the name and date */
 .name {
     font-weight: bold;
     font-size: 1.2em;
@@ -97,14 +173,12 @@ body {
     color: #555;
 }
 
-/* Style for the message */
 .message {
     margin-top: 10px;
     font-size: 1em;
-    color: #ffffff;
+    color: white;
 }
 
-/* Style for the reply */
 .reply {
     margin-top: 10px;
     font-style: italic;
@@ -112,50 +186,82 @@ body {
     color: #c4c4c4;
 }
 
-/* Styles for the social media tab */
-#socialTab {
-    position: fixed; /* Fixes the tab to the screen */
-    bottom: 20px; /* Position it 20px from the bottom */
-    right: 20px; /* Position it 20px from the right */
-    background-color: #fff; /* White background for the tab */
-    border-radius: 50%; /* Makes the icon circular */
-    padding: 10px; /* Adds space around the icon */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-    z-index: 1000; /* Ensures the tab is on top of other content */
+/* ===============================
+   FORMS (MOBILE FRIENDLY)
+================================ */
+
+input,
+textarea,
+button {
+    font-size: 1em;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
-#socialTab img {
-    width: 40px; /* Sets the size of the Instagram icon */
-    height: 40px; /* Sets the size of the Instagram icon */
-    display: block; /* Ensures image is displayed as a block */
+@media (max-width: 768px) {
+    input,
+    textarea,
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
 }
 
+/* ===============================
+   SOCIAL MEDIA FLOATING BUTTONS
+================================ */
 
-#socialTab:hover {
-    background-color: #f1f1f1; /* Changes background color on hover */
-}
-
-/* Styles for the social media tab */
+#socialTab,
 #socialTab2 {
-    position: fixed; /* Fixes the tab to the screen */
-    bottom: 20px; /* Position it 20px from the bottom */
-    right: 100px; /* Position it 120px from the right */
-    background-color: #fff; /* White background for the tab */
-    border-radius: 50%; /* Makes the icon circular */
-    padding: 10px; /* Adds space around the icon */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-    z-index: 1000; /* Ensures the tab is on top of other content */
+    position: fixed;
+    bottom: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
 }
 
+#socialTab {
+    right: 20px;
+}
 
+#socialTab2 {
+    right: 100px;
+}
+
+#socialTab img,
 #socialTab2 img {
-    width: 40px; /* Sets the size of the Discord icon */
-    height: 40px; /* Sets the size of the Discord icon */
-    display: block; /* Ensures image is displayed as a block */
+    width: 40px;
+    height: 40px;
+    display: block;
 }
 
+#socialTab:hover,
 #socialTab2:hover {
-    background-color: #f1f1f1; /* Changes background color on hover */
+    background-color: #f1f1f1;
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+    #socialTab {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    #socialTab2 {
+        right: 70px;
+        bottom: 10px;
+    }
+
+    #socialTab,
+    #socialTab2 {
+        transform: scale(0.85);
+    }
 }
