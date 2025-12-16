@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </h1>
                 <p>
                     <strong>Grab some popcorn!</strong> <br>
-                    Select a movie from the list below.
+                    Visit my <a href="http://movies.felixband.nl" target="_blank">movie repository!</a>!
                 </p>
             `
         },
