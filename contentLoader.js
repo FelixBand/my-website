@@ -70,6 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             `
         },
+        music: {
+            title: "Music",
+            content: `
+                <h1 align="center">
+                    My music service.
+                </h1>
+                <p>
+                    <strong>Plug in the loudspeaker!</strong> <br>
+                    Visit my <a href="https://music.felixband.nl" target="_blank">music service</a>!
+                </p>
+            `
+        },
         movies: {
             title: "Movies",
             content: `
