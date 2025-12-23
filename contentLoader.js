@@ -22,14 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     I have a Minecraft server with various different worlds and gamemodes. Take a look! The address is: <br>
                     <span id="serverAddress" style="color:red;">mc.felixband.nl</span>
                     <button onclick="copyToClipboard()">Copy Address</button> <br>
-                    You can play on either Java or Bedrock edition.
+                    You can play on both Java or Bedrock edition.
                     I try to keep it up to date at all times, meaning you should be able to join on the newest release of the game.
-
-                    In case you have a pirated copy of Minecraft, I have a cracked server to accommodate. That address is:
-                    <br>
-                        <span id="serverAddress" style="color:red;">pi.felixband.nl:25566</span>
-                        <button onclick="copyToClipboard()">Copy Address</button>
-                    <br>
                 </p>       
             `
         },
