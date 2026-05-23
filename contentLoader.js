@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             content: `
                 <h1 align="center">Bandit - Game Launcher</h1>
                 <p>
-                    Bandit is a program I made to make it easier to download and play games (DRM free). You can download it 
+                    Bandit is an app I made to make it easier to download and play games (DRM free). You can download it 
                     <a href="https://github.com/FelixBand/Bandit/releases/latest" target="_blank">here</a>.
                 </p>  
             `
