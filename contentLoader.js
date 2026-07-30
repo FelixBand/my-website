@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <a href="https://minecraft.net" target="_blank">Minecraft</a>
                     built in JavaScript by <a href="https://lax1dude.net/" target="_blank">lax1dude</a>.
                     <a href="https://thuis.felixband.nl/eaglercraftx-wasm.html" target="_blank">Click here to play!</a>
+                    <br>
+                    <strong>Note:</strong> This game works on iPhone, but you'll need to run iOS 27 or later.
                 </p>
                 <p>
                     For some awesome non-browser based games, check out my project 
