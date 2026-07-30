@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Home",
             content: `
                 <h1 align="center">
-                    Welcome to my amazin' site.
-                    Here you can find out about my Minecraft server, game launcher,
-                    the games I like, and other general stuff about me.
+                    Welcome to my awesome site.
+                    Here you can find out about me, Felix, my passion projects, what I do,
+                    and more!
                 </h1>
                 <p>
                     <strong>Welcome!</strong> <br>
@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     I have a Minecraft server with various different worlds and gamemodes. Take a look! The address is: <br>
                     <span id="serverAddress" style="color:red;">mc.felixband.nl</span>
                     <button onclick="copyToClipboard()">Copy Address</button> <br>
-                    You can play on both Java or Bedrock edition.
-                    I try to keep it up to date at all times, meaning you should be able to join on the newest release of the game.
+                    You can play on both Java and Bedrock edition and on any version of Minecraft.
                 </p>       
             `
         },
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             content: `
                 <h1 align="center">Bandit - Game Launcher</h1>
                 <p>
-                    Bandit is an app I made to easily download and play games, even with your friends! You can download it 
+                    Bandit is an app I made to easily install and play games, even with your friends! You can install it 
                     <a href="https://github.com/FelixBand/Bandit/releases/latest" target="_blank">here</a>.
                 </p>  
             `
