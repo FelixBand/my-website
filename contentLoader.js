@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
             content: `
                 <h1 align="center">About Me</h1>
                 <p>
-                    Hello! I'm Felix. Welcome to my amazing site. 
-                    I love gaming, especially Minecraft, and I also work on various fun projects.
-                    Feel free to explore the site to learn more about what I do!
+                    I'm Felix! I love nerding out; programming, making games, making apps, making computers, making movies, etcetera.
+                    <br>
+                    Check out all the tabs on this site to see what kind of stuff I made!
                 </p>
             `
         },
