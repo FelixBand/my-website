@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             content: `
                 <h1 align="center">Bandit - Game Launcher</h1>
                 <p>
-                    Bandit is an app I made to make it easier to download and play games (DRM free). You can download it 
+                    Bandit is an app I made to easily download and play games, even with your friends! You can download it 
                     <a href="https://github.com/FelixBand/Bandit/releases/latest" target="_blank">here</a>.
                 </p>  
             `
@@ -48,19 +48,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             `
         },
-        mystuff: {
-            title: "My Stuff",
+        games: {
+            title: "Games",
             content: `
-                <h1 align="center">My Stuff</h1>
+                <h1 align="center">Games</h1>
                 <p>
-                    I've made a few games and personal projects in my free time. Those include a full remake of
+                    On this page, you can find some cool games, some of which I've made myself in my free time. Those include a full remake of
                     <a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys" target="_blank">Five Nights at Freddy's</a>
-                    in Scratch, which you can play <a href="https://thuis.felixband.nl/fnaf" target="_blank">here</a>.
+                    built from the ground up in Scratch by me. <a href="https://thuis.felixband.nl/fnaf" target="_blank">Click here to play!</a>
                 </p>
                 <p>
                     Beside that, I've also made a very modular remake of 
                     <a href="https://ninja-muffin24.itch.io/funkin" target="_blank">Friday Night Funkin'</a>
-                    in Scratch, which you can play <a href="https://thuis.felixband.nl/fnf" target="_blank">here</a>.
+                    in Scratch. <a href="https://thuis.felixband.nl/fnf" target="_blank">Click here to play!</a>
+                </p>
+                <p>
+                    You can also play a browser-based version of 
+                    <a href="https://minecraft.net" target="_blank">Minecraft</a>
+                    built in JavaScript by <a href="https://lax1dude.net/" target="_blank">lax1dude</a>.
+                    <a href="https://thuis.felixband.nl/eaglercraftx-wasm.html" target="_blank">Click here to play!</a>
+                </p>
+                <p>
+                    For some awesome non-browser based games, check out my project 
+                    <a href="https://thuis.felixband.nl?page=bandit" target="">Bandit - Game Launcher!</a>
                 </p>
             `
         },
