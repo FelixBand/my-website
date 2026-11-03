@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </h1>
                 <p>
                     <strong>Grab some popcorn!</strong> <br>
-                    Visit my <a href="http://movies.felixband.nl" target="_blank">movie repository</a>!
+                    Visit my <a href="http://thuis.felixband.nl:8096" target="_blank">movie repository</a>!
                 </p>
             `
         },
